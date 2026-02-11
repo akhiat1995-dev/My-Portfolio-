@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { ChevronDown, MessageSquare, Download } from 'lucide-react';
 import { Link } from 'react-scroll';
 import { useLanguage } from '../context/LanguageContext';

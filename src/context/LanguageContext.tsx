@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
 type Language = 'EN' | 'FR';
@@ -240,7 +241,7 @@ const translations: Record<Language, Record<string, string>> = {
         'about.why_1': 'Plus de 2 ans d\'expérience concrète en croissance LinkedIn',
         'about.why_2': 'Résultats prouvés en visibilité, engagement et positionnement',
         'about.why_3': 'Approche structurée et orientée vers les objectifs (pas de publications aléatoires)',
-        'about.why_4': 'Combinaison d\'expérience marketing et de compétences en développement d\IA',
+        'about.why_4': "Combinaison d'expérience marketing et de compétences en développement d'IA",
 
         'contact.title': 'Contact',
         'contact.subtitle': 'Prêt à développer votre présence sur LinkedIn avec une approche claire et efficace ?',
