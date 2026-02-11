@@ -56,7 +56,7 @@ const Hero = () => {
                                 </div>
 
                                 <a
-                                    href="/my cv.pdf"
+                                    href="/cv-youness-akhiat.pdf"
                                     download
                                     className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 border-2 border-slate-200 text-base font-bold rounded-full text-primary hover:bg-slate-50 transition-all"
                                 >
@@ -75,7 +75,7 @@ const Hero = () => {
 
                                 <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white lg:-ml-10">
                                     <img
-                                        src="/photo orange.png"
+                                        src="/profile.png"
                                         alt="Youness Akhiat"
                                         className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
                                     />
