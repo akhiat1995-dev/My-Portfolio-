@@ -1,43 +1,46 @@
 import { Briefcase, GraduationCap, Award } from 'lucide-react';
+import { Link } from 'react-scroll';
+import { useLanguage } from '../context/LanguageContext';
 
 const TimelineSection = () => {
+    const { t } = useLanguage();
     const experiences = [
         {
-            title: "LinkedIn Freelancer & Digital Marketing Strategist",
-            company: "Self-Employed",
-            period: "Current",
-            desc: "Developing and executing growth strategies for B2B founders and companies.",
+            title: t('timeline.exp_1_title'),
+            company: t('timeline.exp_1_company'),
+            period: t('timeline.exp_1_period'),
+            desc: t('timeline.exp_1_desc'),
             icon: Briefcase
         },
         {
-            title: "Economic & Social Services Officer",
-            company: "Public Sector",
-            period: "Previous",
-            desc: "Managed administrative and strategic social operations with focus on data precision.",
+            title: t('timeline.exp_2_title'),
+            company: t('timeline.exp_2_company'),
+            period: t('timeline.exp_2_period'),
+            desc: t('timeline.exp_2_desc'),
             icon: Award
         },
         {
-            title: "Internships (TGR, Banque Populaire)",
-            company: "Multiple Entities",
-            period: "Early Career",
-            desc: "Gained foundational experience in financial services and public treasury operations.",
+            title: t('timeline.exp_3_title'),
+            company: t('timeline.exp_3_company'),
+            period: t('timeline.exp_3_period'),
+            desc: t('timeline.exp_3_desc'),
             icon: Award
         }
     ];
 
     const education = [
         {
-            title: "AI Development",
-            school: "JobInTech / SUPMIR Academy",
-            period: "2024",
-            desc: "Specializing in Intelligent Agents, LLMs, and System Automation.",
+            title: t('timeline.edu_1_title'),
+            school: t('timeline.edu_1_school'),
+            period: t('timeline.edu_1_period'),
+            desc: t('timeline.edu_1_desc'),
             icon: GraduationCap
         },
         {
-            title: "Bachelor’s Degree – Economics & Management",
-            school: "University",
-            period: "Graduated",
-            desc: "Theoretical and practical foundation in business dynamics and economic modeling.",
+            title: t('timeline.edu_2_title'),
+            school: t('timeline.edu_2_school'),
+            period: t('timeline.edu_2_period'),
+            desc: t('timeline.edu_2_desc'),
             icon: GraduationCap
         }
     ];
@@ -54,7 +57,7 @@ const TimelineSection = () => {
                             <div className="p-3 bg-primary rounded-xl text-white">
                                 <Briefcase className="w-6 h-6" />
                             </div>
-                            <h2 className="text-3xl font-extrabold text-primary">Professional Experience</h2>
+                            <h2 className="text-3xl font-extrabold text-primary">{t('timeline.exp_title')}</h2>
                         </div>
 
                         <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
@@ -82,7 +85,7 @@ const TimelineSection = () => {
                             <div className="p-3 bg-secondary rounded-xl text-white">
                                 <GraduationCap className="w-6 h-6" />
                             </div>
-                            <h2 className="text-3xl font-extrabold text-primary">Education & Certifications</h2>
+                            <h2 className="text-3xl font-extrabold text-primary">{t('timeline.edu_title')}</h2>
                         </div>
 
                         <div className="space-y-10">
@@ -101,20 +104,22 @@ const TimelineSection = () => {
                                 </div>
                             ))}
 
-                            <div id="certifications" className="p-8 bg-primary rounded-2xl text-white relative overflow-hidden">
-                                <div className="absolute top-0 right-0 p-8 opacity-10">
-                                    <Award className="w-32 h-32" />
+                            <Link to="certifications" smooth={true} duration={500} className="cursor-pointer block">
+                                <div className="p-8 bg-primary rounded-2xl text-white relative overflow-hidden transition-transform hover:scale-[1.02]">
+                                    <div className="absolute top-0 right-0 p-8 opacity-10">
+                                        <Award className="w-32 h-32" />
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-6 flex items-center">
+                                        <Award className="w-5 h-5 mr-3 text-secondary" />
+                                        {t('timeline.certs_title')}
+                                    </h3>
+                                    <ul className="space-y-3 text-sm text-slate-300">
+                                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span> {t('timeline.cert_1')}</li>
+                                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span> {t('timeline.cert_2')}</li>
+                                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span> {t('timeline.cert_3')}</li>
+                                    </ul>
                                 </div>
-                                <h3 className="text-xl font-bold mb-6 flex items-center">
-                                    <Award className="w-5 h-5 mr-3 text-secondary" />
-                                    Certifications Overview
-                                </h3>
-                                <ul className="space-y-3 text-sm text-slate-300">
-                                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span> AI & Technology Specialist</li>
-                                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span> Digital Marketing & Analytics</li>
-                                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span> Professional Project Tools</li>
-                                </ul>
-                            </div>
+                            </Link>
                         </div>
                     </div>
 

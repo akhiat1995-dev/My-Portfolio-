@@ -87,7 +87,7 @@ const GrowthCard = ({ num }: { num: number }) => {
             )}
             <div className="p-8">
                 <div className="flex items-center justify-between mb-4">
-                    <div className="text-[10px] font-bold text-secondary uppercase tracking-[0.2em]">Growth Case 0{num}</div>
+                    <div className="text-[10px] font-bold text-secondary uppercase tracking-[0.2em]">{t('linkedin.growth_case')} 0{num}</div>
                     {!hasImage && (
                         <div className={`px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold rounded-full transition-colors ${isClickable ? 'group-hover:bg-secondary group-hover:text-white' : ''}`}>
                             {t(`linkedin.example_${num}_res`)}

@@ -5,17 +5,17 @@ const SkillsGrid = () => {
     const skillGroups = [
         {
             title: t('skills.group_1'),
-            skills: ["Audience Growth", "Content Strategy", "Profile Optimization", "B2B Lead Gen", "Campaign Analytics"],
+            skills: [t('skills.g1_1'), t('skills.g1_2'), t('skills.g1_3'), t('skills.g1_4'), t('skills.g1_5')],
             color: "from-secondary/20 to-secondary/5"
         },
         {
             title: t('skills.group_2'),
-            skills: ["AI Agents", "Multi-Agent Systems", "RAG & LLMs", "Machine Learning", "Workflow Automation"],
+            skills: [t('skills.g2_1'), t('skills.g2_2'), t('skills.g2_3'), t('skills.g2_4'), t('skills.g2_5')],
             color: "from-primary/20 to-primary/5"
         },
         {
             title: t('skills.group_3'),
-            skills: ["Technical & Project Tools", "Strategic Planning", "Data Analysis", "Python/TypeScript", "React/Node.js"],
+            skills: [t('skills.g3_1'), t('skills.g3_2'), t('skills.g3_3'), t('skills.g3_4'), t('skills.g3_5')],
             color: "from-slate-200 to-slate-50"
         }
     ];

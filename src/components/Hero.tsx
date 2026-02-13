@@ -1,37 +1,35 @@
-import { ChevronDown, MessageSquare, Download } from 'lucide-react';
+import { ArrowRight, Sparkles, MessageSquare, Mail, Linkedin, ChevronDown, Download } from 'lucide-react';
 import { Link } from 'react-scroll';
 import { useLanguage } from '../context/LanguageContext';
 import ScrollSection from './animations/ScrollSection';
+import { useState } from 'react';
+import TextReveal from './animations/TextReveal';
 
 const Hero = () => {
     const { t } = useLanguage();
+    const [isContactOpen, setIsContactOpen] = useState(false);
 
     return (
-        <section id="home" className="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <section id="home" className="min-h-screen flex items-center pt-16 pb-8 lg:pt-20 lg:pb-12 overflow-hidden">
             <ScrollSection>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
 
                         {/* Left Content */}
-                        <div className="lg:col-span-7">
-                            <div className="animate">
-                                <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-6">
-                                    <span className="flex h-2 w-2 rounded-full bg-secondary mr-2"></span>
-                                    <span className="text-[10px] font-bold tracking-widest text-slate-600 uppercase">{t('hero.system_mode')}</span>
-                                </div>
-                            </div>
+                        <div className="lg:col-span-5">
 
-                            <h1 className="animate text-4xl lg:text-5xl font-extrabold text-primary leading-[1.1] mb-6 tracking-tight">
+
+                            <h1 className="animate text-4xl lg:text-5xl font-extrabold text-primary leading-[1.1] mb-4 tracking-tight">
                                 {t('hero.title_1')} <br />
-                                <span className="text-secondary">{t('hero.title_2')}</span>
+                                <TextReveal text={t('hero.title_2')} className="text-secondary" delay={0.2} />
                             </h1>
 
-                            <p className="animate text-xl text-slate-600 mb-8 max-w-2xl leading-relaxed">
+                            <p className="animate text-xl text-slate-600 mb-6 max-w-2xl leading-relaxed">
                                 {t('hero.subtitle')}
                             </p>
 
                             <div className="animate">
-                                <div className="flex items-start mb-10 p-4 bg-slate-50 border-l-4 border-secondary rounded-r-lg max-w-xl">
+                                <div className="flex items-start mb-6 p-3 bg-slate-50 border-l-4 border-secondary rounded-r-lg max-w-xl">
                                     <div>
                                         <h3 className="text-sm font-bold text-primary mb-1 uppercase tracking-wide">AI Action Line</h3>
                                         <p className="text-slate-600 text-sm italic">
@@ -41,39 +39,66 @@ const Hero = () => {
                                 </div>
                             </div>
 
-                            <div className="animate flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                                <div className="relative group">
-                                    <button className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-white bg-primary hover:bg-slate-800 transition-all shadow-lg hover:shadow-secondary/20">
-                                        <MessageSquare className="w-5 h-5 mr-2" />
-                                        {t('hero.cta_contact')}
+                            <div className="animate flex flex-wrap gap-4 pt-4">
+                                <div className="relative">
+                                    <button
+                                        onClick={() => setIsContactOpen(!isContactOpen)}
+                                        onBlur={() => setTimeout(() => setIsContactOpen(false), 200)}
+                                        className="px-6 py-2.5 bg-primary text-white rounded-full font-bold text-sm hover:bg-slate-800 transition-all shadow-lg hover:shadow-primary/25 flex items-center"
+                                    >
+                                        {t('hero.cta_contact')} <ChevronDown className={`ml-2 w-4 h-4 transition-transform ${isContactOpen ? 'rotate-180' : ''}`} />
                                     </button>
-                                    {/* Dropdown on hover/click */}
-                                    <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-slate-200 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                                        <a href="https://wa.me/212627300172" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-secondary">WhatsApp</a>
-                                        <a href="mailto:aktyouness@gmail.com" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-secondary">Email</a>
-                                        <a href="https://www.linkedin.com/in/younessakhiat/" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-secondary">LinkedIn</a>
-                                    </div>
+
+                                    {isContactOpen && (
+                                        <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-slate-100 rounded-xl shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2">
+                                            <a
+                                                href="https://wa.me/212627300172"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-secondary transition-colors"
+                                            >
+                                                <MessageSquare className="w-4 h-4 mr-3" />
+                                                {t('contact.whatsapp')}
+                                            </a>
+                                            <a
+                                                href="mailto:aktyouness@gmail.com"
+                                                className="flex items-center px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-secondary transition-colors"
+                                            >
+                                                <Mail className="w-4 h-4 mr-3" />
+                                                {t('contact.email')}
+                                            </a>
+                                            <a
+                                                href="https://www.linkedin.com/in/younessakhiat/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-secondary transition-colors"
+                                            >
+                                                <Linkedin className="w-4 h-4 mr-3" />
+                                                {t('contact.linkedin_profile')}
+                                            </a>
+                                        </div>
+                                    )}
                                 </div>
 
                                 <a
                                     href="/cv-youness-akhiat.pdf"
                                     download
-                                    className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 border-2 border-slate-200 text-base font-bold rounded-full text-primary hover:bg-slate-50 transition-all"
+                                    className="px-6 py-2.5 bg-white text-primary border-2 border-primary/10 rounded-full font-bold text-sm hover:border-primary hover:bg-slate-50 transition-all flex items-center"
                                 >
-                                    <Download className="w-5 h-5 mr-2" />
+                                    <Download className="w-4 h-4 mr-2" />
                                     {t('btn.download_cv')}
                                 </a>
                             </div>
                         </div>
 
                         {/* Right Image */}
-                        <div className="lg:col-span-5 mt-16 lg:mt-0 relative">
+                        <div className="lg:col-span-7 mt-10 lg:mt-0 relative">
                             <div className="animate relative">
                                 {/* Decorative Elements */}
                                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl animate-pulse"></div>
                                 <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
 
-                                <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white lg:-ml-10">
+                                <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white max-w-sm mx-auto lg:mr-0 lg:ml-auto">
                                     <img
                                         src="/profile.png"
                                         alt="Youness Akhiat"

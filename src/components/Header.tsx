@@ -47,7 +47,7 @@ const Header = () => {
     return (
         <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
+                <div className="flex justify-between items-center h-16">
                     <div className="flex-shrink-0 flex items-center">
                         <Link
                             to="home"
@@ -115,7 +115,7 @@ const Header = () => {
                         </div>
 
                         <a
-                            href="/my cv.pdf"
+                            href="/cv-youness-akhiat.pdf"
                             download
                             className="inline-flex items-center px-5 py-2.5 border border-transparent text-sm font-semibold rounded-full shadow-sm text-white bg-primary hover:bg-slate-800 transition-all focus:outline-none"
                         >
@@ -172,7 +172,7 @@ const Header = () => {
                             <span className="mx-2 text-slate-200">|</span>
                             <button onClick={() => toggleLang('EN')} className={`${lang === 'EN' ? 'text-secondary' : ''}`}>EN</button>
                         </div>
-                        <a href="/my cv.pdf" download className="text-sm font-bold text-primary flex items-center">
+                        <a href="/cv-youness-akhiat.pdf" download className="text-sm font-bold text-primary flex items-center">
                             <Download className="w-4 h-4 mr-1" /> {t('btn.download_cv')}
                         </a>
                     </div>

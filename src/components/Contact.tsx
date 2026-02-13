@@ -31,9 +31,9 @@ const Contact = () => {
                             <div className="w-12 h-12 bg-slate-50 group-hover:bg-white/20 rounded-2xl flex items-center justify-center mb-6 transition-colors">
                                 <MessageSquare className="w-6 h-6 text-primary group-hover:text-white" />
                             </div>
-                            <p className="text-xs font-bold text-slate-400 group-hover:text-white/60 uppercase tracking-widest mb-1">WhatsApp</p>
+                            <p className="text-xs font-bold text-slate-400 group-hover:text-white/60 uppercase tracking-widest mb-1">{t('contact.whatsapp')}</p>
                             <p className="text-lg font-bold text-primary group-hover:text-white flex items-center">
-                                Send Message <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-all" />
+                                {t('contact.send_msg')} <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-all" />
                             </p>
                         </a>
 
@@ -44,8 +44,8 @@ const Contact = () => {
                             <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
                                 <Mail className="w-6 h-6 text-white" />
                             </div>
-                            <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Email</p>
-                            <p className="text-lg font-bold text-white">Get in Touch</p>
+                            <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">{t('contact.email')}</p>
+                            <p className="text-lg font-bold text-white">{t('contact.get_in_touch')}</p>
                         </a>
 
                         <a
@@ -57,8 +57,8 @@ const Contact = () => {
                                     <Linkedin className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-bold text-white/40 uppercase tracking-widest">LinkedIn Profile</p>
-                                    <p className="text-xl font-bold text-white">Connect with Youness</p>
+                                    <p className="text-xs font-bold text-white/40 uppercase tracking-widest">{t('contact.linkedin_profile')}</p>
+                                    <p className="text-xl font-bold text-white">{t('contact.connect')}</p>
                                 </div>
                             </div>
                             <ArrowRight className="w-6 h-6 text-secondary" />
@@ -68,7 +68,7 @@ const Contact = () => {
 
                 <div className="mt-20 text-center">
                     <p className="text-white/30 text-xs font-bold tracking-widest uppercase">
-                        © {new Date().getFullYear()} YOUNESS AKHIAT · ALL SYSTEMS OPTIMIZED
+                        © {new Date().getFullYear()} YOUNESS AKHIAT · {t('contact.rights')}
                     </p>
                 </div>
             </div>
