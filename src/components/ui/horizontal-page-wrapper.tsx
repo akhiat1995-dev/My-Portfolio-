@@ -1,9 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useTransform, useScroll } from 'framer-motion';
 
 const HorizontalPageWrapper = ({ children }: { children: React.ReactNode }) => {
     const targetRef = useRef<HTMLDivElement | null>(null);
-    const [contentWidth, setContentWidth] = useState(0);
 
     // We need to know the total width of the content to scroll correctly
     useEffect(() => {

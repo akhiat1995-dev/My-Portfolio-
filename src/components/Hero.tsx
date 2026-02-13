@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, MessageSquare, Mail, Linkedin, ChevronDown, Download } from 'lucide-react';
+import { MessageSquare, Mail, Linkedin, ChevronDown, Download } from 'lucide-react';
 import { Link } from 'react-scroll';
 import { useLanguage } from '../context/LanguageContext';
 import ScrollSection from './animations/ScrollSection';
