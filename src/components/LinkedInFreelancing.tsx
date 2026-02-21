@@ -127,13 +127,13 @@ const GrowthCard = ({ caseStudy, onClick }: { caseStudy: CaseStudy; onClick: () 
                             <>
                                 <button
                                     onClick={prevImage}
-                                    className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-primary hover:bg-white transition-all opacity-0 group-hover:opacity-100 z-20"
+                                    className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-primary hover:bg-white transition-all z-20"
                                 >
                                     <ChevronLeft className="w-4 h-4" />
                                 </button>
                                 <button
                                     onClick={nextImage}
-                                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-primary hover:bg-white transition-all opacity-0 group-hover:opacity-100 z-20"
+                                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-primary hover:bg-white transition-all z-20"
                                 >
                                     <ChevronRight className="w-4 h-4" />
                                 </button>

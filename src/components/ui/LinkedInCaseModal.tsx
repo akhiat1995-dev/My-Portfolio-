@@ -101,6 +101,8 @@ const LinkedInCaseModal = ({ caseStudy, isOpen, onClose }: LinkedInCaseModalProp
                                         />
                                     </AnimatePresence>
 
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+
                                     {caseStudy.images.length > 1 && (
                                         <>
                                             <button
@@ -127,8 +129,7 @@ const LinkedInCaseModal = ({ caseStudy, isOpen, onClose }: LinkedInCaseModalProp
                                         </>
                                     )}
 
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-                                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
                                         <div className="flex items-center gap-3 mb-2">
                                             <span className="px-3 py-1 bg-secondary text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
                                                 Growth Case 0{caseStudy.id}
