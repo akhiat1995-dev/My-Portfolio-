@@ -1,15 +1,61 @@
 import { MessageSquare, Mail, Linkedin, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
     const { t } = useLanguage();
+    const sectionRef = useRef<HTMLElement>(null);
+    const decor1Ref = useRef<HTMLDivElement>(null);
+    const decor2Ref = useRef<HTMLDivElement>(null);
+
+    useGSAP(
+        () => {
+            if (decor1Ref.current) {
+                gsap.fromTo(
+                    decor1Ref.current,
+                    { y: 100, x: 50 },
+                    {
+                        y: -100,
+                        x: -30,
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: 1,
+                        },
+                    }
+                );
+            }
+            if (decor2Ref.current) {
+                gsap.fromTo(
+                    decor2Ref.current,
+                    { y: -100, x: -50 },
+                    {
+                        y: 100,
+                        x: 30,
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: 1,
+                        },
+                    }
+                );
+            }
+        },
+        { scope: sectionRef }
+    );
 
     return (
-        <section id="contact" className="py-24 bg-primary relative overflow-hidden">
-            {/* Decorative Background */}
+        <section id="contact" ref={sectionRef} className="py-24 bg-primary relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary rounded-full blur-[120px]"></div>
-                <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-slate-400 rounded-full blur-[120px]"></div>
+                <div ref={decor1Ref} className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary rounded-full blur-[120px]"></div>
+                <div ref={decor2Ref} className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-slate-400 rounded-full blur-[120px]"></div>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

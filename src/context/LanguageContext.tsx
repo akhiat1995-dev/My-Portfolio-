@@ -29,6 +29,7 @@ const translations: Record<Language, Record<string, string>> = {
         'hero.title_1': 'I Help You Get More Visibility,',
         'hero.title_2': 'Leads, and Results on LinkedIn',
         'hero.subtitle': 'Build visibility, attract the right audience, and turn LinkedIn into a real growth channel.',
+        'hero.ai_action': 'AI Action Line',
         'hero.ai_diff': 'Powered by smart automation and AI systems to optimize content, workflows, and decisions.',
         'hero.cta_contact': 'Contact Me',
 
@@ -175,7 +176,8 @@ const translations: Record<Language, Record<string, string>> = {
         'hero.system_mode': 'MODE SYSTÈME · ACTIF',
         'hero.title_1': 'Je Vous Aide à Obtenir Plus de Visibilité,',
         'hero.title_2': 'de Leads et de Résultats sur LinkedIn',
-        'hero.subtitle': 'Renforcez votre visibilité, attirez la bonne audience et transformez LinkedIn en un véritable canal de croissance.',
+        'hero.subtitle': 'Transformez LinkedIn en un canal de croissance puissant.',
+        'hero.ai_action': 'Ligne d\'Action IA',
         'hero.ai_diff': 'Propulsé par une automatisation intelligente et des systèmes d\'IA pour optimiser le contenu, les flux de travail et les décisions.',
         'hero.cta_contact': 'Contactez-moi',
 
