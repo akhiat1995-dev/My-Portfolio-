@@ -177,9 +177,9 @@ const translations: Record<Language, Record<string, string>> = {
 
         'hero.system_mode': 'MODE SYSTÈME · ACTIF',
         'hero.title_1_p1':'Je vous aide ',
-        'hero.title_1_p2':'à obtenir',
-        'hero.title_2_p1':'des leads ',
-        'hero.title_2_p2': 'et résultats sur LinkedIn',
+        'hero.title_1_p2':'à obtenir visibilité',
+        'hero.title_2_p1':'leads et résultats ',
+        'hero.title_2_p2':'sur Linkedin',
         'hero.subtitle': 'Transformez LinkedIn en un canal de croissance puissant.',
         'hero.ai_action': 'Ligne d\'Action IA',
         'hero.ai_diff': 'Propulsé par une automatisation intelligente et des systèmes d\'IA pour optimiser le contenu, les flux de travail et les décisions.',
